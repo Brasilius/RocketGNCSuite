@@ -1,7 +1,24 @@
 [project]
 name = "sub-orbital"
 version = "0.1.0"
-description = "Add your description here"
+description = "Sub-orbital rocket GNC simulator with EKF and particle filter sensor fusion"
 readme = "README.md"
-requires-python = ">=3.14"
-dependencies = []
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.0",
+    "scipy>=1.13",
+    "matplotlib>=3.9",
+    "rich>=13.7",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["sim"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
